@@ -29,66 +29,70 @@
     top: 0;
     z-index: 999;
   }
-  
-  .navbar-logo img {
-    height: 150px;
-  }
-  
+
+.navbar-logo img {
+  height: 150px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-nav a {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: var(--hover-color);
+}
+
+.navbar-extra {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-extra a {
+  color: var(--text-color);
+  margin-left: 1rem;
+}
+
+#hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+/* RESPONSIVE MENU FIX */
+@media (max-width: 768px) {
   .navbar-nav {
-    display: flex;
-    gap: 2rem;
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    background: var(--primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s ease;
   }
-  
-  .navbar-nav a {
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+
+  .navbar-nav.active {
+    right: 0;
   }
-  
-  .navbar-nav a:hover {
-    color: var(--hover-color);
-  }
-  
-  .navbar-extra a {
-    color: var(--text-color);
-    margin-left: 1rem;
-  }
-  
+
   #hamburger-menu {
-    display: none;
-    cursor: pointer;
+    display: block;
+    font-size: 2rem;
+    margin-left: auto;
+    color: var(--text-color);
   }
-  
-  @media (max-width: 768px) {
-    #hamburger-menu {
-      display: block;
-      font-size: 2.5rem;
-      color: white;
-      cursor: pointer;
-      z-index: 10001;
-    }
-  
-    .navbar-nav {
-      position: absolute;
-      top: 70px; /* SESEUAIKAN dengan tinggi navbar */
-      right: -100%;
-      width: 70%;
-      height: calc(100vh - 70px);
-      background: var(--primary);
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 2rem;
-      gap: 1.5rem;
-      transition: right 0.4s ease;
-    }
-  
-    .navbar-nav.active {
-      right: 0;
-    }
-  }
-  
-  
+}
+
   .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Image/layers and eggs.jpg') no-repeat center/cover;
